@@ -1,0 +1,13 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"src.Controllers.AsteroidCreatorController.AsteroidCreatorController" [color="black", fontcolor="black", label="{AsteroidCreatorController|\l|getLastAsteroidCreated()\lnotify(subscribed)\l}", shape="record", style="solid"];
+"src.Controllers.Controller.Controller" [color="black", fontcolor="black", label="{Controller|subscribers : list\l|notify(e)\lnotify_all()\lsubscribe(subscriber)\l}", shape="record", style="solid"];
+"src.Controllers.DateEnteredController.DateEnteredController" [color="black", fontcolor="black", label="{DateEnteredController|\l|notify(subscribed)\l}", shape="record", style="solid"];
+"src.Controllers.DeletionController.DeletionController" [color="black", fontcolor="black", label="{DeletionController|\l|collision(bodyA, bodyB)\llightestBody(bodyA, bodyB)\lnotify(subscribed)\l}", shape="record", style="solid"];
+"src.Controllers.TimeController.TimeController" [color="black", fontcolor="black", label="{TimeController|observed\l|notify(subscribed)\l}", shape="record", style="solid"];
+"src.Controllers.AsteroidCreatorController.AsteroidCreatorController" -> "src.Controllers.Controller.Controller" [arrowhead="empty", arrowtail="none"];
+"src.Controllers.DateEnteredController.DateEnteredController" -> "src.Controllers.Controller.Controller" [arrowhead="empty", arrowtail="none"];
+"src.Controllers.DeletionController.DeletionController" -> "src.Controllers.Controller.Controller" [arrowhead="empty", arrowtail="none"];
+"src.Controllers.TimeController.TimeController" -> "src.Controllers.Controller.Controller" [arrowhead="empty", arrowtail="none"];
+}

@@ -1,0 +1,13 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"src.Bodies.Asteroid.Asteroid" [color="black", fontcolor="black", label="{Asteroid|\l|}", shape="record", style="solid"];
+"src.Bodies.Body.Body" [color="black", fontcolor="black", label="{Body|aroundBody : str\lmass\lname\lpos\lradius\lsideralRotation\lvelocity\l|distance(pos2)\lfindReferenceBodyAmongEntities(entities)\lfindReferenceEntity(bodies)\lmove(time)\l}", shape="record", style="solid"];
+"src.Bodies.Planet.Planet" [color="black", fontcolor="black", label="{Planet|\l|}", shape="record", style="solid"];
+"src.Bodies.Satellite.Satellite" [color="black", fontcolor="black", label="{Satellite|\l|}", shape="record", style="solid"];
+"src.Bodies.Star.Star" [color="black", fontcolor="black", label="{Star|\l|}", shape="record", style="solid"];
+"src.Bodies.Asteroid.Asteroid" -> "src.Bodies.Body.Body" [arrowhead="empty", arrowtail="none"];
+"src.Bodies.Planet.Planet" -> "src.Bodies.Body.Body" [arrowhead="empty", arrowtail="none"];
+"src.Bodies.Satellite.Satellite" -> "src.Bodies.Body.Body" [arrowhead="empty", arrowtail="none"];
+"src.Bodies.Star.Star" -> "src.Bodies.Body.Body" [arrowhead="empty", arrowtail="none"];
+}

@@ -1,0 +1,12 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"src.SolarSystem.InitialConditions.InitialConditions" [color="black", fontcolor="black", label="{InitialConditions|api\ldate\linitial_conditions\lposition\lvelocity\l|computePosition()\lcomputeVeclocity()\l}", shape="record", style="solid"];
+"src.SolarSystem.MovementHandler.MovementHandler" [color="black", fontcolor="black", label="{MovementHandler|attractions : dict\ldeletionController\lsystem\l|all_attractions()\lcompute_attraction(a, b)\ldetect_collision(a, b)\ldetect_collisions()\lmove(body)\lmove_all()\l}", shape="record", style="solid"];
+"src.SolarSystem.SolarSystem.SolarSystem" [color="black", fontcolor="black", label="{SolarSystem|asteroidCreatorController\lbasicBodies\lbodies : list\lcreated_asteroids_number : int\ldate : date\ldeletionController\lmovementHandler\lnewDateEnteredController\lpairs : list\ltime\ltimeController\l|all_pairs()\lchangeDate(newDate)\lcreateAsteroid(name, radius, mass, pos, velocity)\lcreate_bodies()\ldeleteBody(body)\ldistance(body1: Body, body2: Body): Vector\linit_date(startingDate: date)\linit_initialConditions(body)\lmove()\lnewDateEntered(date)\l}", shape="record", style="solid"];
+"src.SolarSystem.Time.Time" [color="black", fontcolor="black", label="{Time|date : datetime\ldt\lhour : str\lmonth\lt : int\ltimeController\l|addController(timeController)\lchangeDate(date)\lcheckChange()\lincrease()\l}", shape="record", style="solid"];
+"src.SolarSystem.MovementHandler.MovementHandler" -> "src.SolarSystem.SolarSystem.SolarSystem" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="movementHandler", style="solid"];
+"src.SolarSystem.Time.Time" -> "src.SolarSystem.SolarSystem.SolarSystem" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="time", style="solid"];
+"src.SolarSystem.SolarSystem.SolarSystem" -> "src.SolarSystem.InitialConditions.InitialConditions" [arrowhead="none", arrowtail="none", fontcolor="green", label="init_IntialConditions", style="solid"];
+
+}

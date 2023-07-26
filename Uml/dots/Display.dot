@@ -1,0 +1,36 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"src.Display.AsteroidZone.AsteroidParameters.AsteroidParameters" [color="orange", fontcolor="black", label="{AsteroidParameters|default_values : dict\ldisplayer\lparams : dict\lparent\lsliders : dict\ltext_info : Text\lvisible : bool\lzone\l|asteroid_parameter_changement(param)\llaunch()\l}", shape="record", style="solid"];
+"src.Display.AsteroidZone.AsteroidZone.AsteroidZone" [color="orange", fontcolor="black", label="{AsteroidZone|asteroid_infos\lbutton : Button\ldisplayer\llauncher_mode : bool\lposition : tuple\lrectangle : Entity\lrectangle_position : tuple\lscale : tuple\lstarting_camera_position\lvelocity : tuple\l|activate_asteroid_infos()\lactivate_launcher()\linitRectangle()\llaunch_asteroid()\llaunch_mode()\lupdate()\l}", shape="record", style="solid"];
+"src.Display.BodyEntity.BodyEntity" [color="black", fontcolor="black", label="{BodyEntity|body\ldisplayer\lgraphics\lmassCompactWriting\lname\lposition\l|setMassCompactWriting()\l}", shape="record", style="solid"];
+"src.Display.BodyGraphics.BodyGraphics" [color="black", fontcolor="black", label="{BodyGraphics|DISTANCE_SCALE : float \lbodyEntity \lsize_scale : int\ltexture\l|graphicsEntityScale(bodyEntity)\l}", shape="record", style="solid"];
+"src.Display.CameraHandler.CameraHandler" [color="black", fontcolor="black", label="{CameraHandler|displayer\l|camera_update()\l}", shape="record", style="solid"];
+"src.Display.CollisionHandler.CollisionHandler" [color="black", fontcolor="black", label="{CollisionHandler|deletionController\ldisplay\l|handle_collisions()\l}", shape="record", style="solid"];
+"src.Display.DateInput.DateField.DateField" [color="purple", fontcolor="black", label="{DateField|color : Color\llimit_content_to\lon_submit\lscale : tuple\ltext : str\ltext_entity : Text\l|}", shape="record", style="solid"];
+"src.Display.DateInput.DateInputHandler.DateInputHandler" [color="purple", fontcolor="black", label="{DateInputHandler|button_legend : Text\ldisplayer\lmonth\lnewDateEnteredController\lvalidate : Button\lyear\l|button_on_mouse_enter()\lbutton_on_mouse_exit()\ldateChangementUpdate(date)\linitButton()\linitFields()\lsubmit()\lupdateFields(year, month)\l}", shape="record", style="solid"];
+"src.Display.InfoZone.InfoText.InfoText" [color="blue", fontcolor="black", label="{InfoText|body : NoneType\lhandler\lhide : bool\linfo\lparent\lsize : float\ltext : Text\lunit : str\lupdateFunction\lx\ly\l|displayText(object)\lerase()\l}", shape="record", style="solid"];
+"src.Display.InfoZone.TextHandler.TextHandler" [color="blue", fontcolor="black", label="{TextHandler|body : NoneType\ldefault_text : str\linfoZone\ltexts : dict\lvisible_texts : bool\l|displayInfos()\lerase()\lhide_and_show()\lupdate()\l}", shape="record", style="solid"];
+"src.Display.InfoZone.InfoZone.InfoZone" [color="blue", fontcolor="black", label="{InfoZone|displayer\lrectangle : Entity\lrectangle_position : tuple\lscale : tuple\lstarting_camera_position\ltextHandler\l|initRectangle()\lupdate()\l}", shape="record", style="solid"];
+"src.Display.PositionComputer.PositionComputer" [color="black", fontcolor="black", label="{PositionComputer|SCALE_DIST : int\lSCALE_DIST_SATELLITES : int\lSCALE_SIZE : int\ldisplayer\l|computePosition(bodyEntity)\lcomputeStalliteEntityPosition(bodyEntity)\lcomputeStandardEntityPosition(bodyEntity)\l}", shape="record", style="solid"];
+"src.Display.SliderHandler.Slider_dt" [color="black", fontcolor="black", label="{Slider_dt|displayer\llabel : Text\lmemory : int, NoneType\lvalue : NoneType, int\l|freeze()\linitSlider()\lmemorize()\lslider_dt_change()\lupdate()\lvisible_label()\l}", shape="record", style="solid"];
+"src.Display.Displayer.SolarSystemDisplayer" [color="black", fontcolor="black", label="{SolarSystemDisplayer|asteroidCreatorController\lasteroidZone\lbasicBodyEntities : list\lbodies\lbodyEntities : list\lcamera\lcollisionHandler\ldateInputHandler\lfrozen : bool\linfos\lpositionComputer\lsky : Sky\lsliderHandler\lsolarEntity : Entity\lsolarsystem\l|createAsteroid(name, radius, mass, pos, velocity, entity)\ldeleteBody(body)\ldeleteBodyEntity(bodyEntity)\lfindBodyEntityAccordingToBody(body)\linitCamera()\linitEntities()\linitEntity(body, size_scale, textureName)\linitSky()\lnewDateEntered()\lupdate()\l}", shape="record", style="solid"];
+"src.Display.AsteroidZone.AsteroidParameters.AsteroidParameters" -> "src.Display.AsteroidZone.AsteroidZone.AsteroidZone" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="asteroid_infos", style="solid"];
+"src.Display.BodyEntity.BodyEntity" -> "src.Display.BodyGraphics.BodyGraphics" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="bodyEntity", style="solid"];
+"src.Display.CameraHandler.CameraHandler" -> "src.Display.Displayer.SolarSystemDisplayer" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="camera", style="solid"];
+"src.Display.CollisionHandler.CollisionHandler" -> "src.Display.Displayer.SolarSystemDisplayer" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="collisionHandler", style="solid"];
+"src.Display.DateInput.DateField.DateField" -> "src.Display.DateInput.DateInputHandler.DateInputHandler" [arrowhead="diamond", arrowtail="none", style="solid"];
+"src.Display.DateInput.DateInputHandler.DateInputHandler" -> "src.Display.Displayer.SolarSystemDisplayer" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="dateInputHandler", style="solid"];
+"src.Display.InfoZone.TextHandler.TextHandler" -> "src.Display.InfoZone.InfoZone.InfoZone" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="textHandler", style="solid"];
+"src.Display.PositionComputer.PositionComputer" -> "src.Display.Displayer.SolarSystemDisplayer" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="positionComputer", style="solid"];
+"src.Display.SliderHandler.Slider_dt" -> "src.Display.Displayer.SolarSystemDisplayer" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="sliderHandler", style="solid"];
+"src.Display.Displayer.SolarSystemDisplayer" -> "src.Display.BodyEntity.BodyEntity" [arrowhead="diamond", arrowtail="none", style="solid"];
+"src.Display.Displayer.SolarSystemDisplayer" -> "src.Display.AsteroidZone.AsteroidParameters.AsteroidParameters" [arrowhead="diamond", arrowtail="none", style="solid"];
+"src.Display.InfoZone.InfoText.InfoText" -> "src.Display.InfoZone.TextHandler.TextHandler" [arrowhead="diamond", arrowtail="none", style="solid"];
+"src.Display.InfoZone.InfoZone.InfoZone" -> "src.Display.Displayer.SolarSystemDisplayer" [arrowhead="diamond", arrowtail="none", style="solid"];
+
+
+}
+
+
+
